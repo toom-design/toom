@@ -28,19 +28,6 @@
       overflow: hidden;
     }
 
-    /* fades page content out over the 50px just below the fixed nav,
-       so scrolling text never collides with the nav labels */
-    .page-content {
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0px, transparent 52px, black 102px, black 100%);
-      mask-image: linear-gradient(to bottom, transparent 0px, transparent 52px, black 102px, black 100%);
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-size: 100% 100%;
-      mask-size: 100% 100%;
-      -webkit-mask-attachment: fixed;
-      mask-attachment: fixed;
-    }
-
     /* ── Hero ── */
     .hero {
       position: relative;
@@ -240,32 +227,6 @@
       text-align: center;
     }
 
-    /* ── Lookbook ── */
-    .lookbook { padding: 96px 48px 30px; }
-    .lookbook-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 38px;
-    }
-    .lookbook-header h2 {
-      margin: 0;
-      font-weight: 600;
-      font-size: 32px;
-      letter-spacing: -.01em;
-    }
-    .lookbook-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-    .lookbook-grid img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-    }
-
     /* ── Footer ── */
     .footer { padding: 70px 48px 44px; }
     .footer-top {
@@ -311,10 +272,6 @@
       .story { padding: 72px 24px !important; }
       .story h2 { font-size: 15px !important; white-space: normal !important; letter-spacing: .05em !important; }
 
-      .lookbook { padding: 60px 20px 24px !important; }
-      .lookbook-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
-      .lookbook-header h2 { font-size: 22px !important; }
-
       .footer { padding: 48px 24px 32px !important; }
       .footer-top { flex-direction: column !important; align-items: flex-start !important; }
       .footer-links { gap: 32px !important; }
@@ -348,7 +305,7 @@
     <div class="hero-inner" style="padding-top:0;">
       <div class="hero-copy">
         <h1 class="hero-h1">Where innovation meets craftsmanship.</h1>
-        <a href="#collections" class="hero-cta">
+        <a href="collections.html" class="hero-cta">
           <span>Explore latest collection</span><span style="font-size:17px;letter-spacing:0;">→</span>
         </a>
       </div>
@@ -411,20 +368,6 @@
     </div>
   </div>
 
-  <!-- lookbook -->
-  <div id="collections" class="lookbook">
-    <div class="lookbook-header">
-      <h2>REVERSA Lookbook</h2>
-      <span style="font-size:13px;letter-spacing:.04em;color:#1f9d86;border-bottom:1px solid #3ebfa6;padding-bottom:3px;">View all →</span>
-    </div>
-    <div class="lookbook-grid">
-      <img src="assets/_MG_5170-Edit.jpg" alt="REVERSA look 01">
-      <img src="assets/_MG_5176-Edit.jpg" alt="REVERSA look 02">
-      <img src="assets/_MG_5185-Edit.jpg" alt="REVERSA look 03">
-      <img src="assets/_MG_5194-Edit.jpg" alt="REVERSA look 04">
-    </div>
-  </div>
-
   <!-- footer -->
   <div class="footer">
     <div class="footer-top">
@@ -462,7 +405,7 @@
 
 </div>
 
-<div style="position:fixed;bottom:12px;right:16px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.08em;color:rgba(150,145,140,.5);pointer-events:none;z-index:999;">v1.3.6</div>
+<div style="position:fixed;bottom:12px;right:16px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.08em;color:rgba(150,145,140,.5);pointer-events:none;z-index:999;">v1.4.0</div>
 
 <script>
   (function () {
