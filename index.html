@@ -28,12 +28,25 @@
       overflow: hidden;
     }
 
+    /* fades page content out over the 50px just below the fixed nav,
+       so scrolling text never collides with the nav labels */
+    .page-content {
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0px, transparent 52px, black 102px, black 100%);
+      mask-image: linear-gradient(to bottom, transparent 0px, transparent 52px, black 102px, black 100%);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-attachment: fixed;
+      mask-attachment: fixed;
+    }
+
     /* ── Hero ── */
     .hero {
       position: relative;
-      height: calc(100svh - 64px);
+      height: 100svh;
       min-height: 536px;
-      margin-top: 64px;
+      margin-top: 0;
       background: #241019;
       background-image: url('assets/hero.webp');
       background-size: cover;
@@ -64,11 +77,14 @@
       align-items: center;
       padding: 0 28px;
       gap: 16px;
-      background: #FAFAF8;
-      border-bottom: 1px solid rgba(26,25,22,0.10);
+      background: transparent;
+      border-bottom: 1px solid transparent;
       height: 52px;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
     }
     .site-nav-left { display: flex; align-items: center; }
+    .site-nav-left a { color: rgba(243,242,239,0.92); transition: color 0.25s ease; }
+    .site-nav-left svg { transition: stroke 0.25s ease; }
     .site-nav-center {
       display: flex; align-items: center; gap: 28px; justify-content: center;
     }
@@ -77,12 +93,23 @@
     }
     .site-nav a, .site-nav span {
       font-size: 13px; font-weight: 400; letter-spacing: 0.10em;
-      text-transform: uppercase; color: rgba(26,25,22,0.65);
-      text-decoration: none; white-space: nowrap; transition: color 0.15s;
+      text-transform: uppercase; color: rgba(243,242,239,0.85);
+      text-decoration: none; white-space: nowrap; transition: color 0.25s ease;
     }
-    .site-nav a:hover { color: #1a1916; }
-    .site-nav .bag { color: rgba(26,25,22,0.35); font-size: 13px; letter-spacing: 0.10em; }
-    .hero-copy { color: #f3f2ef; max-width: 740px; }
+    .site-nav a:hover { color: #f3f2ef; }
+    .site-nav .bag { color: rgba(243,242,239,0.45); font-size: 13px; letter-spacing: 0.10em; }
+
+    /* nav over a light background (e.g. scrolled past the hero) */
+    .site-nav.on-light {
+      background: #FAFAF8;
+      border-bottom: 1px solid rgba(26,25,22,0.10);
+    }
+    .site-nav.on-light .site-nav-left a { color: rgba(26,25,22,0.92); }
+    .site-nav.on-light .site-nav-left svg { stroke: rgba(26,25,22,0.92); }
+    .site-nav.on-light a, .site-nav.on-light span { color: rgba(26,25,22,0.65); }
+    .site-nav.on-light a:hover { color: #1a1916; }
+    .site-nav.on-light .bag { color: rgba(26,25,22,0.35); }
+    .hero-copy { color: #f3f2ef; max-width: 740px; margin-bottom: 100px; }
     .hero-h1 {
       margin: 0;
       font-weight: 500;
@@ -302,7 +329,7 @@
   <nav class="site-nav">
     <div class="site-nav-left">
       <a href="index.html" style="line-height:0;">
-        <svg viewBox="0 0 229.18 65.81" role="img" aria-label="TOOM" style="height:26px;width:auto;display:block;" fill="none" stroke="#1a1916" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M61.69,20.37v25.06c0,1.02.54,1.95,1.42,2.46l21.71,12.53c.88.51,1.96.51,2.84,0l21.71-12.53c.88-.51,1.42-1.45,1.42-2.46v-25.06c0-1.02-.54-1.95-1.42-2.46l-21.71-12.53c-.88-.51-1.96-.51-2.84,0l-21.71,12.53c-.88.51-1.42,1.45-1.42,2.46Z"></path><path d="M118.39,20.37v25.06c0,1.02.54,1.95,1.42,2.46l21.71,12.53c.88.51,1.96.51,2.84,0l21.71-12.53c.88-.51,1.42-1.45,1.42-2.46v-25.06c0-1.02-.54-1.95-1.42-2.46l-21.71-12.53c-.88-.51-1.96-.51-2.84,0l-21.71,12.53c-.88.51-1.42,1.45-1.42,2.46Z"></path><line x1="29.55" y1="8.36" x2="29.55" y2="57.46"></line><line x1="5" y1="8.36" x2="54.1" y2="8.36"></line><polyline points="175.08 57.46 175.08 8.36 199.63 30.85 224.18 8.36 224.18 57.46"></polyline></svg>
+        <svg viewBox="0 0 229.18 65.81" role="img" aria-label="TOOM" style="height:26px;width:auto;display:block;" fill="none" stroke="rgba(243,242,239,0.92)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M61.69,20.37v25.06c0,1.02.54,1.95,1.42,2.46l21.71,12.53c.88.51,1.96.51,2.84,0l21.71-12.53c.88-.51,1.42-1.45,1.42-2.46v-25.06c0-1.02-.54-1.95-1.42-2.46l-21.71-12.53c-.88-.51-1.96-.51-2.84,0l-21.71,12.53c-.88.51-1.42,1.45-1.42,2.46Z"></path><path d="M118.39,20.37v25.06c0,1.02.54,1.95,1.42,2.46l21.71,12.53c.88.51,1.96.51,2.84,0l21.71-12.53c.88-.51,1.42-1.45,1.42-2.46v-25.06c0-1.02-.54-1.95-1.42-2.46l-21.71-12.53c-.88-.51-1.96-.51-2.84,0l-21.71,12.53c-.88.51-1.42,1.45-1.42,2.46Z"></path><line x1="29.55" y1="8.36" x2="29.55" y2="57.46"></line><line x1="5" y1="8.36" x2="54.1" y2="8.36"></line><polyline points="175.08 57.46 175.08 8.36 199.63 30.85 224.18 8.36 224.18 57.46"></polyline></svg>
       </a>
     </div>
     <div class="site-nav-center">
@@ -327,6 +354,8 @@
       </div>
     </div>
   </div>
+
+  <div class="page-content">
 
   <!-- TailorTech split -->
   <div class="tt-grid">
@@ -429,8 +458,34 @@
     </div>
   </div>
 
+  </div>
+
 </div>
 
-<div style="position:fixed;bottom:12px;right:16px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.08em;color:rgba(150,145,140,.5);pointer-events:none;z-index:999;">v1.3.5</div>
+<div style="position:fixed;bottom:12px;right:16px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.08em;color:rgba(150,145,140,.5);pointer-events:none;z-index:999;">v1.3.6</div>
+
+<script>
+  (function () {
+    var nav = document.querySelector('.site-nav');
+    var hero = document.querySelector('.hero');
+    if (!nav || !hero) return;
+
+    function updateNavColor() {
+      var navHeight = nav.offsetHeight;
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      // Once the hero's dark background has scrolled past the nav,
+      // switch the logo/text to the dark-on-light variant.
+      if (heroBottom <= navHeight) {
+        nav.classList.add('on-light');
+      } else {
+        nav.classList.remove('on-light');
+      }
+    }
+
+    updateNavColor();
+    window.addEventListener('scroll', updateNavColor, { passive: true });
+    window.addEventListener('resize', updateNavColor);
+  })();
+</script>
 </body>
 </html>
