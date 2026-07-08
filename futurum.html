@@ -1,68 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/bee-teal.png">
-  <style>
-    *{box-sizing:border-box;} html,body{margin:0;padding:0;}
-    body{background:#f3f2ef;font-family:"Archivo",sans-serif;}
-    ::selection{background:#3ebfa6;color:#3a1140;}
-    a{color:inherit;}
-    .site-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: 0 28px;
-      gap: 16px;
-      height: 52px;
-      background: #FAFAF8;
-      border-bottom: 1px solid rgba(26,25,22,0.10);
-    }
-    .site-nav-left { display: flex; align-items: center; }
-    .site-nav-left a { color: rgba(26,25,22,0.92); }
-    .site-nav-center { display: flex; align-items: center; gap: 28px; justify-content: center; }
-    .site-nav-right { display: flex; align-items: center; justify-content: flex-end; }
-    .site-nav a, .site-nav span {
-      font-size: 13px; font-weight: 400; letter-spacing: 0.10em;
-      text-transform: uppercase; color: rgba(26,25,22,0.65);
-      text-decoration: none; white-space: nowrap; transition: color 0.15s;
-    }
-    .site-nav a:hover { color: #1a1916; }
-    .center{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:112px 24px 60px;}
-    .center h1{margin:0 0 24px;font-weight:600;font-size:64px;line-height:.92;letter-spacing:-.02em;color:#141310;}
-    .center p{margin:0 0 40px;font-size:16px;line-height:1.6;color:#9a958c;max-width:400px;}
-    .back{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(26,25,22,.3);padding:12px 22px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#56544f;text-decoration:none;}
-    footer{padding:40px 56px;border-top:1px solid #e4e0d8;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;color:#9a958c;text-align:right;}
-    @media(max-width:768px){.site-nav{padding:0 16px;}.site-nav-center{gap:16px;}.site-nav a,.site-nav span{font-size:11px;}.center h1{font-size:40px;}}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Futurum Lucidius — TOOM Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #0a0908; font-family: "Archivo", sans-serif; }
+  ::selection { background: #3ebfa6; color: #06231d; }
+  a { color: inherit; }
+  a:hover { color: #3ebfa6; }
+</style>
 </head>
 <body>
-  <nav class="site-nav">
-    <div class="site-nav-left">
+
+<div style="background:#0a0908;color:#f3f2ef;">
+
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 28px;gap:16px;height:56px;background:rgba(10,9,8,0.85);backdrop-filter:blur(8px);border-bottom:1px solid rgba(243,242,239,0.08);">
+    <div style="display:flex;align-items:center;">
       <a href="index.html" style="line-height:0;">
-        <svg viewBox="0 0 229.18 65.81" role="img" aria-label="TOOM" style="height:26px;width:auto;display:block;" fill="none" stroke="rgba(26,25,22,0.92)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M61.69,20.37v25.06c0,1.02.54,1.95,1.42,2.46l21.71,12.53c.88.51,1.96.51,2.84,0l21.71-12.53c.88-.51,1.42-1.45,1.42-2.46v-25.06c0-1.02-.54-1.95-1.42-2.46l-21.71-12.53c-.88-.51-1.96-.51-2.84,0l-21.71,12.53c-.88.51-1.42,1.45-1.42,2.46Z"></path><path d="M118.39,20.37v25.06c0,1.02.54,1.95,1.42,2.46l21.71,12.53c.88.51,1.96.51,2.84,0l21.71-12.53c.88-.51,1.42-1.45,1.42-2.46v-25.06c0-1.02-.54-1.95-1.42-2.46l-21.71-12.53c-.88-.51-1.96-.51-2.84,0l-21.71,12.53c-.88.51-1.42,1.45-1.42,2.46Z"></path><line x1="29.55" y1="8.36" x2="29.55" y2="57.46"></line><line x1="5" y1="8.36" x2="54.1" y2="8.36"></line><polyline points="175.08 57.46 175.08 8.36 199.63 30.85 224.18 8.36 224.18 57.46"></polyline></svg>
+        <svg viewBox="0 0 229.18 65.81" role="img" aria-label="TOOM" style="height:22px;width:auto;display:block;" fill="none" stroke="rgba(243,242,239,0.92)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M61.69,20.37v25.06c0,1.02.54,1.95,1.42,2.46l21.71,12.53c.88.51,1.96.51,2.84,0l21.71-12.53c.88-.51,1.42-1.45,1.42-2.46v-25.06c0-1.02-.54-1.95-1.42-2.46l-21.71-12.53c-.88-.51-1.96-.51-2.84,0l-21.71,12.53c-.88.51-1.42,1.45-1.42,2.46Z"></path><path d="M118.39,20.37v25.06c0,1.02.54,1.95,1.42,2.46l21.71,12.53c.88.51,1.96.51,2.84,0l21.71-12.53c.88-.51,1.42-1.45,1.42-2.46v-25.06c0-1.02-.54-1.95-1.42-2.46l-21.71-12.53c-.88-.51-1.96-.51-2.84,0l-21.71,12.53c-.88.51-1.42,1.45-1.42,2.46Z"></path><line x1="29.55" y1="8.36" x2="29.55" y2="57.46"></line><line x1="5" y1="8.36" x2="54.1" y2="8.36"></line><polyline points="175.08 57.46 175.08 8.36 199.63 30.85 224.18 8.36 224.18 57.46"></polyline></svg>
       </a>
     </div>
-    <div class="site-nav-center">
-      <a href="https://tailortech.toom.design/configure" target="_blank" rel="noopener">Tailortech</a>
-      <a href="collections.html">Collections</a>
-      <a href="about.html">About</a>
+    <div style="display:flex;align-items:center;gap:28px;justify-content:center;">
+      <a href="https://tailortech.toom.design/configure" target="_blank" rel="noopener" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,242,239,0.65);text-decoration:none;white-space:nowrap;">Tailortech</a>
+      <a href="collections.html" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,242,239,0.65);text-decoration:none;white-space:nowrap;">Collections</a>
+      <a href="about.html" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,242,239,0.65);text-decoration:none;white-space:nowrap;">About</a>
     </div>
-    <div class="site-nav-right"></div>
+    <div style="display:flex;align-items:center;justify-content:flex-end;">
+      <a href="#photoshoot" style="border:1px solid rgba(62,191,166,0.5);padding:9px 18px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#3ebfa6;text-decoration:none;white-space:nowrap;">Lookbook</a>
+    </div>
   </nav>
-  <div class="center">
-    <h1>FUTURUM LUCIDIUS</h1>
-    <p>We are working hard on this page. Thank you for your patience.</p>
-    <a href="collections.html" class="back">← Back to Collections</a>
-  </div>
-  <footer>© 2026 TOOM STUDIO</footer>
-  <div style="position:fixed;bottom:12px;right:16px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.08em;color:rgba(150,145,140,.5);pointer-events:none;z-index:999;">v1.1.2</div>
+
+  <!-- HERO -->
+  <section style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;">
+    <img src="hero.jpg" alt="Futurum Lucidius editorial" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 68%;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,9,8,0.95) 0%, rgba(10,9,8,0.6) 32%, rgba(10,9,8,0.18) 55%, rgba(10,9,8,0.45) 100%);"></div>
+    <div style="position:relative;z-index:2;padding:80px 56px;max-width:1440px;">
+      <h1 style="margin:0 0 28px;font-weight:300;font-size:clamp(44px,7vw,92px);line-height:1.05;letter-spacing:0.06em;color:#f3f2ef;">FUTURUM<br />LUCIDIUS</h1>
+      <div style="font-size:15px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#3ebfa6;margin-bottom:18px;">Where craft meets circuitry</div>
+      <p style="margin:0 0 36px;max-width:440px;font-size:15px;line-height:1.7;color:rgba(243,242,239,0.55);">A collection exploring the fusion of digital intelligence and human craftsmanship — tailoring drafted for bodies not yet imagined.</p>
+      <a href="#photoshoot" style="display:inline-block;border:1px solid rgba(243,242,239,0.4);padding:14px 28px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#f3f2ef;text-decoration:none;">Explore Collection</a>
+    </div>
+  </section>
+
+  <!-- INSPO -->
+  <section id="inspo" style="padding:120px 56px 0;max-width:1440px;margin:0 auto;">
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:40px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#f3f2ef;white-space:nowrap;">Inspo</div>
+      <div style="height:1px;flex:1;background:linear-gradient(to right, #3ebfa6, rgba(62,191,166,0.05));"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;height:420px;">
+      <div style="overflow:hidden;background:#141310;">
+        <img src="inspo-2.jpg" alt="Digital / human touch reference" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <div style="overflow:hidden;background:#141310;">
+        <img src="inspo-1.jpg" alt="Code reference" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <div style="overflow:hidden;background:#141310;">
+        <img src="inspo-3.jpg" alt="Android reference" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+    </div>
+    <p style="margin:28px 0 0;font-size:14px;line-height:1.7;color:rgba(243,242,239,0.45);max-width:640px;">The collection explores the concept of emerging future technologies, reflecting the advancements currently unfolding. Through the utilization of color-changing fabric and a bespoke pattern-generating script, it offers a glimpse into the potential aesthetics of future fashion. Spectators may find themselves contemplating the brightness of the future with the latest advancements, including AI, inviting each individual to ponder and draw their own conclusions.</p>
+  </section>
+
+  <!-- LINEUP -->
+  <section id="lineup" style="padding:120px 56px 0;max-width:1440px;margin:0 auto;">
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:40px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#f3f2ef;white-space:nowrap;">Lineup</div>
+      <div style="height:1px;flex:1;background:linear-gradient(to right, #3ebfa6, rgba(62,191,166,0.05));"></div>
+    </div>
+    <div style="background:#f3f2ef;padding:32px;">
+      <img src="lineup-new.jpg" alt="Five-look lineup sketch" style="width:100%;height:auto;display:block;" />
+    </div>
+  </section>
+
+  <!-- MATERIALS -->
+  <section id="materials" style="padding:120px 56px 0;max-width:1440px;margin:0 auto;">
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:40px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#f3f2ef;white-space:nowrap;">Materials</div>
+      <div style="height:1px;flex:1;background:linear-gradient(to right, #3ebfa6, rgba(62,191,166,0.05));"></div>
+    </div>
+    <div style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#3ebfa6;margin-bottom:20px;">Primary Fabrications</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(243,242,239,0.08);margin-bottom:56px;">
+      <div style="background:#0a0908;padding:24px 18px;">
+        <div style="width:100%;aspect-ratio:1;margin-bottom:18px;overflow:hidden;"><img src="mat-p-1.png" alt="LED Fibre Optic" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div style="font-size:13px;font-weight:600;color:#f3f2ef;margin-bottom:6px;">LED Fibre Optic</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.03em;color:rgba(243,242,239,0.45);line-height:1.5;">10% NYLON / 13% POF / 77% POLYESTER</div>
+      </div>
+      <div style="background:#0a0908;padding:24px 18px;">
+        <div style="width:100%;aspect-ratio:1;margin-bottom:18px;overflow:hidden;"><img src="mat-p-2.png" alt="Gabardine" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div style="font-size:13px;font-weight:600;color:#f3f2ef;margin-bottom:6px;">Gabardine</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.03em;color:rgba(243,242,239,0.45);line-height:1.5;">97% COTTON / 3% ELASTANE</div>
+      </div>
+      <div style="background:#0a0908;padding:24px 18px;">
+        <div style="width:100%;aspect-ratio:1;margin-bottom:18px;overflow:hidden;"><img src="mat-p-3.png" alt="Suit Fabric" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div style="font-size:13px;font-weight:600;color:#f3f2ef;margin-bottom:6px;">Suit Fabric</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.03em;color:rgba(243,242,239,0.45);line-height:1.5;">100% WOOL</div>
+      </div>
+      <div style="background:#0a0908;padding:24px 18px;">
+        <div style="width:100%;aspect-ratio:1;margin-bottom:18px;overflow:hidden;"><img src="mat-p-4.png" alt="Satin" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div style="font-size:13px;font-weight:600;color:#f3f2ef;margin-bottom:6px;">Satin</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.03em;color:rgba(243,242,239,0.45);line-height:1.5;">100% SILK</div>
+      </div>
+      <div style="background:#0a0908;padding:24px 18px;">
+        <div style="width:100%;aspect-ratio:1;margin-bottom:18px;overflow:hidden;"><img src="mat-p-5.png" alt="Georgette" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div style="font-size:13px;font-weight:600;color:#f3f2ef;margin-bottom:6px;">Georgette</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.03em;color:rgba(243,242,239,0.45);line-height:1.5;">100% SILK</div>
+      </div>
+      <div style="background:#0a0908;padding:24px 18px;">
+        <div style="width:100%;aspect-ratio:1;margin-bottom:18px;overflow:hidden;"><img src="mat-p-6.png" alt="Denim" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div style="font-size:13px;font-weight:600;color:#f3f2ef;margin-bottom:6px;">Denim</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.03em;color:rgba(243,242,239,0.45);line-height:1.5;">100% COTTON</div>
+      </div>
+    </div>
+
+    <div style="font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#3ebfa6;margin-bottom:20px;">Secondary Fabrications</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#0a0908;">
+      <div style="background:#0a0908;padding:24px 18px;">
+        <div style="width:100%;aspect-ratio:1;margin-bottom:18px;overflow:hidden;"><img src="mat-s-1.png" alt="Wadding" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div style="font-size:13px;font-weight:600;color:#f3f2ef;margin-bottom:6px;">Wadding</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.03em;color:rgba(243,242,239,0.45);line-height:1.5;">100% POLYESTER</div>
+      </div>
+      <div style="background:#0a0908;padding:24px 18px;">
+        <div style="width:100%;aspect-ratio:1;margin-bottom:18px;overflow:hidden;"><img src="mat-s-2.png" alt="Lining" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        <div style="font-size:13px;font-weight:600;color:#f3f2ef;margin-bottom:6px;">Lining</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.03em;color:rgba(243,242,239,0.45);line-height:1.5;">100% POLYESTER</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL DRAWINGS -->
+  <section id="technical" style="padding:120px 56px 0;max-width:1440px;margin:0 auto;">
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:40px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#f3f2ef;white-space:nowrap;">Technical Drawings</div>
+      <div style="height:1px;flex:1;background:linear-gradient(to right, #3ebfa6, rgba(62,191,166,0.05));"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:64px;">
+      <div>
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3ebfa6;margin-bottom:16px;">Look 01</div>
+        <div style="background:#f3f2ef;padding:16px;"><img src="techlook-1.jpg" alt="Look 01 — full tech pack" style="width:100%;height:auto;display:block;" /></div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3ebfa6;margin-bottom:16px;">Look 02</div>
+        <div style="background:#f3f2ef;padding:16px;"><img src="techlook-2.jpg" alt="Look 02 — full tech pack" style="width:100%;height:auto;display:block;" /></div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3ebfa6;margin-bottom:16px;">Look 03</div>
+        <div style="background:#f3f2ef;padding:16px;"><img src="techlook-3.jpg" alt="Look 03 — full tech pack" style="width:100%;height:auto;display:block;" /></div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3ebfa6;margin-bottom:16px;">Look 04</div>
+        <div style="background:#f3f2ef;padding:16px;"><img src="techlook-4.jpg" alt="Look 04 — full tech pack" style="width:100%;height:auto;display:block;" /></div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3ebfa6;margin-bottom:16px;">Look 05</div>
+        <div style="background:#f3f2ef;padding:16px;"><img src="techlook-5.jpg" alt="Look 05 — full tech pack" style="width:100%;height:auto;display:block;" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" style="padding:120px 56px 0;max-width:1440px;margin:0 auto;">
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:40px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#f3f2ef;white-space:nowrap;">Process</div>
+      <div style="height:1px;flex:1;background:linear-gradient(to right, #3ebfa6, rgba(62,191,166,0.05));"></div>
+    </div>
+    <div style="margin-bottom:40px;">
+      <img src="process-cropped.png" alt="Toile fitting in progress" style="width:100%;height:auto;display:block;" />
+    </div>
+    <div style="max-width:760px;">
+      <p style="margin:0 0 24px;font-size:16px;line-height:1.8;color:rgba(243,242,239,0.6);">Every silhouette was proven first in toile on the stand — checking balance, drape, and the placement of the reflective panels before a single piece of final fabric was cut.</p>
+      <p style="margin:0;font-size:16px;line-height:1.8;color:rgba(243,242,239,0.6);">Only once the fit held did the pattern move to wool, silk, and the technical weave that carries the collection's current of teal.</p>
+    </div>
+  </section>
+
+  <!-- PHOTOSHOOT -->
+  <section id="photoshoot" style="padding:120px 56px 140px;max-width:1440px;margin:0 auto;">
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:40px;">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#f3f2ef;white-space:nowrap;">Photoshoot</div>
+      <div style="height:1px;flex:1;background:linear-gradient(to right, #3ebfa6, rgba(62,191,166,0.05));"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;">
+      <div style="aspect-ratio:3/4.4;overflow:hidden;background:#141310;"><img src="look-1.jpg" alt="Look 01" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="aspect-ratio:3/4.4;overflow:hidden;background:#141310;"><img src="look-2.jpg" alt="Look 02" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="aspect-ratio:3/4.4;overflow:hidden;background:#141310;"><img src="look-3.jpg" alt="Look 03" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="aspect-ratio:3/4.4;overflow:hidden;background:#141310;"><img src="look-4.jpg" alt="Look 04" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div style="aspect-ratio:3/4.4;overflow:hidden;background:#141310;"><img src="look-5.jpg" alt="Look 05" style="width:100%;height:100%;object-fit:cover;" /></div>
+    </div>
+  </section>
+
+  <!-- CREDITS -->
+  <footer style="padding:40px 56px;border-top:1px solid rgba(243,242,239,0.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;color:rgba(243,242,239,0.4);">© 2024 Tomáš Maliňak — Futurum Lucidius</div>
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;color:rgba(243,242,239,0.4);text-align:right;">Photography — Michal Wagner</div>
+  </footer>
+</div>
+
 </body>
 </html>
